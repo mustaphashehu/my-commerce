@@ -277,8 +277,3 @@ const pay = async (req, res) => {
   
 
 module.exports = { addToCart, getCart, removeFromCart, payForCart, getTheCart, pay, handlePaymentSuccess };
-
-
-
-
-uhveyvuyhvryevyve
