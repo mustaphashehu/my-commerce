@@ -237,7 +237,6 @@ const pay = async (req, res) => {
         cancel_url: `${process.env.CLIENT_URL}/cart`,  // Replace with your front-end URL
       });
   
-      // Send the checkout session URL to the frontend
       res.status(StatusCodes.OK).json({ msg: session.url });
     } catch (error) {
     //   console.error("Error creating Stripe session:", error);
@@ -278,3 +277,8 @@ const pay = async (req, res) => {
   
 
 module.exports = { addToCart, getCart, removeFromCart, payForCart, getTheCart, pay, handlePaymentSuccess };
+
+
+
+
+uhveyvuyhvryevyve
