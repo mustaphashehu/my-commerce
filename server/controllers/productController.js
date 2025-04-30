@@ -23,13 +23,12 @@ const createProduct = async (req, res) => {
     //req.body.user = req.user.userID;
     //const theUser = req.user.userID;
     var { name, price, description, category, company, inventory } = req.body;
+    console.log(category);
+    
     const mainImage = req.files?.mainImage;
     const otherImages = req.files?.additionalImages;
     // console.log(otherImages);
-    const allowedCategories = [
-        "Beauty", "Electronics", "Fashion", "Food", "Health",
-        "Homes", "Office", "Pet", "School", "Sports", "Toys"
-    ];
+    const allowedCategories = ["beauty", "electronics", "fashion", "food", "health", "homes", "office", "pet", "school", "sports", "toys"]
     
     if (!name) {
         throw new badRequest("please specify name")
@@ -277,10 +276,7 @@ const getAllProducts = async (req, res) => {
     
     
     const limitValue = parseInt(limit)
-    const categories = [
-        "Beauty", "Electronics", "Fashion", "Food",
-        "Health", "Homes", "Office", "Pet", "School", "Sports", "Toys"
-    ];
+    const categories = ["beauty", "electronics", "fashion", "food", "health", "homes", "office", "pet", "school", "sports", "toys"]
 
     if (category === "start") {
     

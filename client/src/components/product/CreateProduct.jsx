@@ -17,7 +17,7 @@ const CreateProduct = () => {
                         placeholder="Product Name"
                         className="px-4 py-2 text-base rounded-md bg-white border border-gray-400 w-full outline-blue-500" />
                 </div>
-                
+
                 <div>
                     <textarea type="text"
                         name="description"
@@ -36,9 +36,9 @@ const CreateProduct = () => {
                         placeholder="Price"
                         className="px-4 py-2 text-base rounded-md bg-white border border-gray-400 w-full outline-blue-500" />
                 </div>
-                
+
                 <div>
-                    <input 
+                    <input
                         type="text"
                         name="company"
                         value={productFormData.company}
@@ -48,17 +48,37 @@ const CreateProduct = () => {
                 </div>
 
                 <div>
-                    <input
+                    {/* <input
                         type="text"
                         name="category"
                         value={productFormData.category}
                         onChange={handleInputChange}
                         placeholder="Category"
                         className="px-4 py-2 text-base rounded-md bg-white border border-gray-400 w-full outline-blue-500" />
+                         */}
+                    <select
+                        name="category"
+                        value={productFormData.category}
+                        onChange={handleInputChange}
+                        className="px-4 py-2 text-base rounded-md bg-white border border-gray-400 w-full outline-blue-500"
+                    >
+                        <option value="">Select a category</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="food">Food</option>
+                        <option value="health">Health</option>
+                        <option value="homes">Homes</option>
+                        <option value="office">Office</option>
+                        <option value="pet">Pet</option>
+                        <option value="school">School</option>
+                        <option value="sports">Sports</option>
+                        <option value="toys">Toys</option>
+                    </select>
                 </div>
 
                 <div>
-                    <input 
+                    <input
                         type="number"
                         name="inventory"
                         value={productFormData.inventory}
@@ -101,24 +121,23 @@ const CreateProduct = () => {
                     class="px-4 py-1.5 text-sm rounded-md bg-white border border-gray-400 w-full outline-blue-500" />
                 </div> */}
                 {
-                    statusCode === 500 ? 
-                    <div className="px-6 py-3  text-white font-semibold rounded-lg shadow-md hover focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all bg-red-500">{error}</div> 
-                    : null
+                    statusCode === 500 ?
+                        <div className="px-6 py-3  text-white font-semibold rounded-lg shadow-md hover focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all bg-red-500">{error}</div>
+                        : null
                 }
-                
-                <button 
+
+                <button
                     type="submit"
                     disabled={isLoading ? true : haveWrite ? false : statusCode === 500 ? false : true}
                     className={`px-6 py-3  text-white font-semibold rounded-lg shadow-md hover focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all
-                                ${  
-                                    haveWrite
-                                    ? "bg-blue-600 hover:bg-blue-700"
-                                    : error
-                                    ? (statusCode === 500 ? "bg-blue-600 hover:bg-blue-700": "bg-red-500 hover:bg-red-600 cursor-not-allowed")
-                                    : !haveWrite || isLoading
+                                ${haveWrite
+                            ? "bg-blue-600 hover:bg-blue-700"
+                            : error
+                                ? (statusCode === 500 ? "bg-blue-600 hover:bg-blue-700" : "bg-red-500 hover:bg-red-600 cursor-not-allowed")
+                                : !haveWrite || isLoading
                                     ? "loading loading-spinner bg-gray-400 cursor-not-allowed"
                                     : "bg-blue-600 hover:bg-blue-700"
-                                }
+                        }
                     `}
                 >
                     {/* {isLoading ? "Loading..." : "Upload Product"} */}
@@ -127,7 +146,7 @@ const CreateProduct = () => {
 
             </div>
 
-            
+
         </form>
     );
 }
