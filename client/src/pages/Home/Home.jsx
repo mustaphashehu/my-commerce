@@ -82,7 +82,7 @@ const Home = () => {
                 products.map((object, index) => (
                     <div
                         key={index}
-                        className="flex flex-col gap-4 border border-gray-200 rounded-2xl p-6 shadow-md bg-white"
+                        className="flex flex-col gap-3 border border-gray-200 rounded-2xl p-6 shadow-md bg-white"
                     >
                         {/* Category Name */}
                         <h2 className="text-2xl font-bold text-gray-800 text-center uppercase tracking-wide">

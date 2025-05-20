@@ -56,12 +56,14 @@ import { CheckCircleIcon } from "@heroicons/react/solid";
 
 const Card2 = ({ products }) => {
   const { getProductDetail, isModalOpen, setIsModalOpen } = useContext(ProductContext);
+  console.log(products);
+  
 
   return (
-    <div className="bg-gradient-to-tr from-slate-100 to-white py-14">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-tr from-slate-100 to-white py-10">
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
           {products.map((product) => (
             <div
               key={product._id}
@@ -84,7 +86,7 @@ const Card2 = ({ products }) => {
               {/* Text Info */}
               <h3 className="text-lg font-bold text-slate-800 mb-1">{product.name}</h3>
               <p className="text-sm text-slate-500 font-medium mb-1">by {product.company}</p>
-              <p className="text-xs text-gray-400 mb-2">{product.category}</p>
+              <p className="text-xs text-gray-400 mb-2">#{product.category}</p>
 
               {/* Price + Verified */}
               <div className="flex items-center justify-center gap-2 text-emerald-600 font-semibold text-lg mt-auto">

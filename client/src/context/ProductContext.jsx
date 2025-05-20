@@ -115,7 +115,8 @@ export const ProductContextProvider = ({ children }) => {
         setMoreProductsIsLoading(true)
         setMoreProductsError(null);
 
-        const page = products[index]?.products.length
+        const page = products[index]?.products.page || 0
+        // const page = 0
         const response = await getRequest(`${baseUrl}/products?category=${category}&page=${page}&limit=${limit}`);
 
         

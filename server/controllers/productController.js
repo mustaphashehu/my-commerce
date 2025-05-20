@@ -276,6 +276,7 @@ const getAllProducts = async (req, res) => {
     
     
     const limitValue = parseInt(limit)
+    const skip = page * limitValue
     const categories = ["beauty", "electronics", "fashion", "food", "health", "homes", "office", "pet", "school", "sports", "toys"]
 
     if (category === "start") {
@@ -312,7 +313,6 @@ const getAllProducts = async (req, res) => {
     }
 
     if (categories.includes(category)) {
-        console.log(category);
         
         const products = await Product.find({category})
             .skip(page)
