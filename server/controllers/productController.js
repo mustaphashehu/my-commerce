@@ -378,11 +378,10 @@ const updateProduct = async (req, res) => {
 }
 
 const deleteProduct = async (req, res, next) => {
-    const theUser = req.user.userID
-    var product = ""
-    console.log(req.params);
-    
 
+    console.log(req.params);
+    let product;
+    
     
     if (req.user.role === "admin") {
         product = await Product.findOneAndDelete({_id: req.params.id})

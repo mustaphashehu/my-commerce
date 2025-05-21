@@ -224,23 +224,23 @@ export const ProductContextProvider = ({ children }) => {
         setMyProducts(response)
     }, [])
 
-    // const deleteProduct = useCallback(async(id) => {
-    //     console.log("zzzzzzzzzzzz:  ",theChange);
+    const deleteProduct = useCallback(async(id) => {
+        console.log("zzzzzzzzzzzz:  ",id);
         
-    //     setDeleteIsLoading(true)
-    //     setDeleteError(null)
+        setDeleteIsLoading(true)
+        setDeleteError(null)
 
 
-    //     const response = await deleteRequest(`${baseUrl}/products${id}`)
+        const response = await deleteRequest(`${baseUrl}/products/${id}`)
 
-    //     setMyProductsIsLoading(false)
+        setDeleteIsLoading(false)
 
-    //     if (response.error) {
-    //         return setDeleteError(response.message)
-    //     }
+        if (response.error) {
+            return setDeleteError(response.message)
+        }
 
-    //     setMyProducts
-    // }, [])
+        getMyProducts();
+    }, [getMyProducts])
 
     return <ProductContext.Provider value={{
         filteredProducts,
@@ -269,7 +269,10 @@ export const ProductContextProvider = ({ children }) => {
         getMyProducts,
         myProducts,
         setMyProductsError,
-        setMyProductsIsLoading, 
+        setMyProductsIsLoading,
+        deleteProduct,
+        deleteIsLoading,
+        deleteError,
     }}>
         {children}
     </ProductContext.Provider>

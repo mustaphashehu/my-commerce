@@ -36,7 +36,7 @@ router
     .route("/:id")
     .get(getSingleProduct)
     .patch(authenticateUser, authorizeGettingSingleUSer(), updateProduct)
-    .delete(authenticateUser, authorizeUser("admin", "user"), deleteProduct, deleteMany)
+    .delete(authenticateUser, authorizeUser("admin", "business"), deleteProduct, deleteMany)
 
 router.route("/:id/reviews").get(getSingleProductReviews);
 
