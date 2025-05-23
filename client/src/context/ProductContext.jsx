@@ -93,7 +93,7 @@ export const ProductContextProvider = ({ children }) => {
     
     const getProducts = async (category) => {
         
-        const limit = 6
+        const limit = 5
         setProductsIsLoading(true)
         setProductsError(null);
 
@@ -111,7 +111,7 @@ export const ProductContextProvider = ({ children }) => {
 
     const getMoreProducts = async (category, index) => {
         
-        const limit = 4
+        const limit = 5
         setMoreProductsIsLoading(true)
         setMoreProductsError(null);
 
@@ -206,7 +206,7 @@ export const ProductContextProvider = ({ children }) => {
         
         setCreatedProductIsLoading(false); 
         
-            
+        getProducts("start") 
         
     }, [productFormData])
 
