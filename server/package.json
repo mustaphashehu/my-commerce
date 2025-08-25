@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "npm start"
+    "test": "npm start",
+    "start": "node app.js"
   },
+  "type": "module",
   "author": "mustey",
   "license": "MIT",
   "dependencies": {
