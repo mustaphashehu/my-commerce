@@ -34,7 +34,8 @@ const notFoundMiddleware = require("./middlewares/notFound")
 const errorHandlerMiddleware = require("./middlewares/errorHandler")
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend URL
+    // origin: 'http://localhost:5173', // Replace with your frontend URL
+    origin: "https://my-commerce-flame.vercel.app",
     credentials: true,
 }))
 app.use(morgan('tiny'))
