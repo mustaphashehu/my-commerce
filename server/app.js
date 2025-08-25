@@ -68,7 +68,7 @@ app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 10000
 
 //connection
 const start = async () => {
