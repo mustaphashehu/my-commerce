@@ -51,8 +51,6 @@ export const AuthContextProvider = ({children}) => {
         formDataTOSend.append("adminCode", adminCode)
         formDataTOSend.append("nin", nin)
 
-
-
         const response = await postRequestFormData(`${baseUrl}/auth/register`, formDataTOSend);
         setRegisterLoading(false)
         if (response.error) {

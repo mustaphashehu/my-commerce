@@ -71,7 +71,7 @@ const Home = () => {
                     {productsError || filteredProductsError}
                 </div>
             ) : productsIsLoading || filteredisLoading ? (
-                <div className="text-center text-xl text-gray-500">Loading...</div>
+                <div className="text-center text-xl text-gray-500">Please, Wait a little i am using Free hosting plan, thank you.</div>
             ) : filteredProducts?.length > 0 ? (
                 <Card2
                     products={filteredProducts}
